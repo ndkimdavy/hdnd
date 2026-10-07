@@ -293,12 +293,12 @@ watch -n 1 'squeue -l -u "$USER"; echo; tail -n 10 -v tool/*.out tool/*.err'
 The coupler applies a sequential splitting:
 
 ```text
-                  coupler
-┌──────────────────────────────────────────┐
-│                                          │
-│   ┌─────────┐     ┌───────────┐     ┌────────┐
+                     coupler
+┌─────────────────────────────────────────────┐
+│                                             │
+│    ┌─────────┐      ┌───────────┐      ┌────────┐
 └──▶│  hydro  │ ──▶ │ radiation │ ──▶ │ source │
-    └─────────┘     └───────────┘     └────────┘
+     └─────────┘      └───────────┘      └────────┘
 ```
 
 The current 1D execution chain is:
