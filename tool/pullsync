@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+REMOTE="${REMOTE:-romeo}"
+LOCAL="${LOCAL:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/out/}"
+TARGET="${TARGET:?Set TARGET to the Romeo job directory}"
+
+EXCLUDES=(
+  --exclude='.*'
+  --exclude='doc/'
+  --exclude='genclosure*.csv'
+  --exclude='Project.toml'
+  --exclude='Manifest.toml'
+)
+
+rsync -avhP \
+  "${EXCLUDES[@]}" \
+  "$REMOTE:$TARGET" \
+  "$LOCAL"

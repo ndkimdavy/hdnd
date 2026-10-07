@@ -1,0 +1,25 @@
+{
+    "model": "MLP",
+    "onnx": "closure_mlp_ir9.onnx",
+    "input": [
+        "fred",
+        "logta",
+        "logfa",
+        "logr"
+    ],
+    "output": "fedd",
+    "normalization": {
+        "min": {
+            "fred": 0.0,
+            "logta": -12.0,
+            "logfa": -12.0,
+            "logr": -12.0
+        },
+        "max": {
+            "fred": 0.999,
+            "logta": 12.0,
+            "logfa": -0.0004345117740176917,
+            "logr": 0.0
+        }
+    }
+}

@@ -1,0 +1,14 @@
+*.dat
+*.tmp
+*.log
+*.err
+*.out
+*.csv
+
+build/
+out/
+
+# Hidden files
+.*
+!.gitignore
+!.vscode/

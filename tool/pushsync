@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -euo pipefail
+
+REMOTE="${REMOTE:-romeo}"
+LOCAL="${LOCAL:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/}"
+TARGET="${TARGET:-hdnd/}"
+
+EXCLUDES=(
+  --exclude='.*'
+  --exclude='doc/'
+  --exclude='out/'
+  --exclude='genclosure*.csv'
+  # --exclude='Project.toml'
+  # --exclude='Manifest.toml'
+)
+
+rsync -avhP \
+  "${EXCLUDES[@]}" \
+  "$LOCAL" \
+  "$REMOTE:$TARGET"
